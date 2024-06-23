@@ -1,8 +1,8 @@
-### Fetch Receipt Processor
+# Fetch Receipt Processor
 Build a webservice that fulfils the documented API. The API is described below. A formal definition is provided in the api.yml file, but the information in this README is sufficient for completion of this challenge. We will use the described API to test your solution.
 
 ## Summary of API Specification
-# Endpoint: Process Receipts
+### Endpoint: Process Receipts
 Path: /receipts/process
 Method: POST
 Payload: Receipt JSON
@@ -13,9 +13,9 @@ Takes in a JSON receipt (see example in the example directory) and returns a JSO
 The ID returned is the ID that should be passed into /receipts/{id}/points to get the number of points the receipt was awarded.
 
 Example Response:
-''' { "id": "7fb1377b-b223-49d9-a31a-5a02701dd310" } '''
+`{ "id": "7fb1377b-b223-49d9-a31a-5a02701dd310" }`
 
-# Endpoint: Get Points
+### Endpoint: Get Points
 Path: /receipts/{id}/points
 Method: GET
 Response: A JSON object containing the number of points awarded.
@@ -24,9 +24,9 @@ Description
 A simple Getter endpoint that looks up the receipt by the ID and returns an object specifying the points awarded.
 
 Example Response:
-''' { "points": 32 } '''
+`{ "points": 32 } `
 
-## Rules
+### Rules
 These rules collectively define how many points should be awarded to a receipt.
 1. One point for every alphanumeric character in the retailer name.
 2. 50 points if the total is a round dollar amount with no cents.
