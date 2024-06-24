@@ -7,6 +7,9 @@ calculate_points_every_two_items, calculate_points_purchase_date, calculate_poin
 
 @pytest.fixture
 def get_test_data_from_json():
+    """
+    Parses the JSON data from examples folder and creates a Receipt object from it.
+    """
     with open(os.path.join(os.path.dirname(__file__), '../examples/receipt1.json')) as f:
         receipt_data=json.load(f)
     items=[Item(**item) for item in receipt_data['items']]
