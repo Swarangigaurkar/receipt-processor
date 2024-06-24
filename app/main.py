@@ -16,9 +16,7 @@ def process_receipt():
     From the JSON payload, generates a unique id using uuid, calculates 
     points based on the receipt and stores the points with the id as the key.
     Returns the id as the JSON response.
-    
     _summary_
-
     Returns:
         id (_type_) : uuid
     """
@@ -37,11 +35,9 @@ def get_points(id):
     """
     Function handles GET requests to /receipts/<id>/points. 
     It returns points based on the receipt id as the JSON response.
-    
     _summary_
     Args:
         id (_type_): uuid
-
     Returns:
         id : points
     """

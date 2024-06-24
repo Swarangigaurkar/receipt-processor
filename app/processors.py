@@ -6,10 +6,8 @@ def calculate_total_points(receipt: Receipt) -> int:
     """
     Calculates total points using the ID and reciept and returns total points as JSON response in the format {'id':points}
     _summary_
-
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
@@ -34,7 +32,6 @@ def calculate_points_retailer_name(receipt: Receipt) -> int:
     _summary_
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
@@ -47,7 +44,6 @@ def calculate_points_total_amount_integer(receipt: Receipt) -> int:
     _summary_
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
@@ -62,7 +58,6 @@ def calculate_points_total_amount_multiple(receipt: Receipt) -> int:
     _summary_
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
@@ -77,7 +72,6 @@ def calculate_points_every_two_items(receipt: Receipt) -> int:
     _summary_
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
@@ -90,7 +84,6 @@ def calculate_points_description_length(receipt: Receipt) -> int:
     _summary_
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
@@ -106,7 +99,6 @@ def calculate_points_purchase_date(receipt: Receipt) -> int:
     _summary_
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
@@ -121,7 +113,6 @@ def calculate_points_purchase_time(receipt: Receipt) -> int:
     _summary_
     Args:
         receipt (Receipt): _description_
-
     Returns:
         int: _description_
     """
