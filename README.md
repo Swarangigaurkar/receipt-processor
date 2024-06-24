@@ -39,8 +39,8 @@ These rules collectively define how many points should be awarded to a receipt.
 ---
 
 ## Setup and Running
-Install Docker(https://docs.docker.com/engine/install/)
-Install Curl(https://curl.se/download.html)
+- Install Docker(https://docs.docker.com/engine/install/)
+- Install Curl(https://curl.se/download.html)
 
 ### Instructions to run with docker image
 1. Load the docker image -
