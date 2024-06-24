@@ -1,14 +1,16 @@
 import math
+from datetime import datetime
+from models import Receipt, ReceiptResponse, PointsResponse
 
 def calculate_total_points(receipt: Receipt) -> int:
     total_points=0
-    rules = ['calculate_points_retailer_name',
-             'calculate_points_total_amount_integer',
-             'calculate_points_total_amount_multiple',
-             'calculate_points_every_two_items',
-             'calculate_points_description_length',
-             'calculate_points_purchase_date',
-             'calculate_points_purchase_time'
+    rules = [ calculate_points_retailer_name, 
+             calculate_points_total_amount_integer,
+             calculate_points_total_amount_multiple,
+             calculate_points_every_two_items,
+             calculate_points_description_length,
+             calculate_points_purchase_date,
+             calculate_points_purchase_time
              ] 
     
     for rule in rules:
@@ -40,7 +42,7 @@ def calculate_points_description_length(receipt: Receipt) -> int:
     points=0
     for item in receipt.items:
         if len(item.shortDescription)>0 and len(item.shortDescription.strip())%3==0:
-            points+=int(float(item.price)*0.2)
+            points+=math.ceil(float(item.price)*0.2)
     return points
 
 def calculate_points_purchase_date(receipt: Receipt) -> int:
