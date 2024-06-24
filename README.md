@@ -41,22 +41,33 @@ These rules collectively define how many points should be awarded to a receipt.
 If you have a docker image of this repository, follow the below commands to run and test the api-
 
 1. Load the docker image -
-  ```bash docker load -i /path/to/saved/image.tar ```
+  ```bash
+docker load -i /path/to/saved/image.tar
+```
 
-2. Check if image is loaded successfully -
-  ```bash docker images ```
+3. Check if image is loaded successfully -
+  ```bash
+docker images
+```
   You should see your imported images.
 
-3. Run the container Run a Container from the Image -
-  ```bash docker run -d -p 8080:8000 <image_name> ```
+4. Run the container Run a Container from the Image -
+  ```bash
+docker run -d -p 8080:8000 <image_name>
+```
 
-4. Now that the server is up and running, send CURL request to local server. Change @examples/receipt2 for second receipt data.
-  ```bash curl -X POST "http://localhost:8000/receipts/process" -H "Content-Type: application/json" -d @examples/receipt1.json ```
+5. Now that the server is up and running, send CURL request to local server. Change @examples/receipt2 for second receipt data.
+  ```bash
+curl -X POST "http://localhost:8000/receipts/process" -H "Content-Type: application/json" -d @examples/receipt1.json
+```
   You should receive a ID as a response.
 
-5. To get points 
-  ```bash curl -X GET "http://localhost:8000/receipts/<id>/points"```
+6. To get points 
+  ```bash
+curl -X GET "http://localhost:8000/receipts/<id>/points"
+```
   You should get the points corresponding to given example receipt. 
+
 ---
 ## Instructions to run without Docker image -
 1. Clone the repository
@@ -67,16 +78,17 @@ If you have a docker image of this repository, follow the below commands to run 
 
 2. Install Dependencies
   ```bash
-  cd receipt-processor
-  pip install -r requirements.txt```
+  pip install -r requirements.txt
+```
 
 3. Run the Flask Application
    ```bash
-   python app/main.py```
+   python app/main.py
+   ```
 
 4. Access the API endpoints using curl or postman-
    ```bash
-   curl -X POST "http://localhost:8000/receipts/process" -H "Content-Type: application/json" -d @examples/receipt1.json```
-
-   ```bash
-   curl -X GET "http://localhost:8000/receipts/<id>/points"```
+   curl -X POST "http://localhost:8000/receipts/process" -H "Content-Type: application/json" -d @examples/receipt1.json
+   
+   curl -X GET "http://localhost:8000/receipts/<id>/points"
+   ```
