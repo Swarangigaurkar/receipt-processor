@@ -51,8 +51,9 @@ docker load -i /path/to/saved/image.tar
   ```bash
 docker images
 ```
-  You should see your imported images.
-4. Run the container Run a Container from the Image -
+You should see your imported images.
+
+4. Run a Container from the Image -
   ```bash
 docker run -d -p 8080:8000 <image_name>
 ```
@@ -60,12 +61,19 @@ docker run -d -p 8080:8000 <image_name>
   ```bash
 curl -X POST "http://localhost:8000/receipts/process" -H "Content-Type: application/json" -d @examples/receipt1.json
 ```
-  You should receive a ID as a response.
+You should receive a ID as a response.
+
 6. To get points 
   ```bash
 curl -X GET "http://localhost:8000/receipts/<id>/points"
 ```
-  You should get the points corresponding to given example receipt. 
+You should get the points corresponding to given example receipt. 
+
+7. Stop the container
+   ```bash
+   docker ps
+   docker stop <container_id_or_name>
+   ```
   
 ---
 ### Instructions to run without Docker image
